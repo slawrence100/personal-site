@@ -8,8 +8,11 @@ import Card from 'react-bootstrap/Card';
 import InterestGrid from "./InterestGrid";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import Navbar from "react-bootstrap/Navbar";
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import placeholder300 from "./300.png";
+import { Nav } from "react-bootstrap";
 
 const SIZE = 6;
 const list = new Array(SIZE).fill(0);
@@ -38,30 +41,18 @@ export default function App() {
       <Scrollspy sectionRefs={sectionRefs}>
         {({ currentElementIndexInViewport }) => (
           <>
-            <ul
-              data-cy="nav-wrapper"
-              className="navbar"
-            >
-              {list.map((_, i) => (
-                <li
-                  key={i}
-                  className={"nav-item " + (
-                    currentElementIndexInViewport === i ? "active" : ""
-                  )
-                  }
-                >
-                  <a
-                    href={indexToId.get(i) + ""}
-                    style={{
-                      color:
-                        currentElementIndexInViewport === i ? "#f00" : "#222"
-                    }}
-                  >
-                    {indexToId.get(i)}
-                  </a>
-                </li>
-              ))}
-            </ul>
+            <Navbar expand={true} sticky="top">
+              <Nav>
+                {
+                  list.map((_, i) => {
+                    const name = indexToId.get(i);
+                    return (
+                      <Nav.Link href={name}>{name}</Nav.Link>
+                    )
+                  })
+                }
+              </Nav>
+            </Navbar>
             <Row ref={sectionRefs[0]}>
               <div id="home" className="centered">
                 <Container fluid>
@@ -91,7 +82,7 @@ export default function App() {
                   </Col>
                   <Col sm={8}>
                     <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in aliquet lorem. Aliquam imperdiet vitae ipsum vitae tempus. Donec consequat augue quam, ac ornare nulla tincidunt eu. Proin viverra velit fringilla gravida tristique. Proin viverra nulla a metus sodales, at vulputate neque tempor. Donec viverra mauris eget eros ullamcorper, id posuere ex convallis. Suspendisse et blandit odio, sed convallis velit. Quisque dapibus et augue sed rhoncus. In dignissim ornare velit id pharetra. Pellentesque suscipit vulputate dui, vitae malesuada diam suscipit eget. Mauris sit amet urna vitae diam tempus rutrum. Ut facilisis justo eget diam blandit finibus. Nunc ultrices at diam non sodales. Ut luctus porta varius. Morbi fermentum elit suscipit, facilisis metus et, dapibus tellus. Donec rutrum, orci sed malesuada ornare, lacus nisl consectetur urna, eu dapibus dolor diam sed purus.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in aliquet lorem. Aliquam imperdiet vitae ipsum vitae tempus. Donec consequat augue quam, ac ornare nulla tincidunt eu. Proin viverra velit fringilla gravida tristique. Proin viverra nulla a metus sodales, at vulputate neque tempor. Donec viverra mauris eget eros ullamcorper, id posuere ex convallis. Suspendisse et blandit odio, sed convallis velit. Quisque dapibus et augue sed rhoncus. In dignissim ornare velit id pharetra. Pellentesque suscipit vulputate dui, vitae malesuada diam suscipit eget. Mauris sit amet urna vitae diam tempus rutrum. Ut facilisis justo eget diam blandit finibus. Nunc ultrices at diam non sodales. Ut luctus porta varius. Morbi fermentum elit suscipit, facilisis metus et, dapibus tellus. Donec rutrum, orci sed malesuada ornare, lacus nisl consectetur urna, eu dapibus dolor diam sed purus.
                     </p>
                     <br />
                     <Form>
@@ -137,6 +128,6 @@ export default function App() {
         )}
       </Scrollspy>
     </Container>
-      
+
   );
 }
