@@ -17,6 +17,14 @@ export default function InterestGrid() {
       </Row>
       <Row>
         <Col>
+          <p>Middle Left</p>
+        </Col>
+        <Col>
+          <p>Middle Right</p>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
           <p>Bottom Left</p>
         </Col>
         <Col>

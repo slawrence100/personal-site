@@ -13,6 +13,9 @@ import Navbar from "react-bootstrap/Navbar";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import placeholder300 from "./300.png";
 import { Nav } from "react-bootstrap";
+import WorkComponent from "./WorkComponent";
+import ProjectsComponent from "./ProjectsComponent";
+import ContactComponent from "./ContactComponent";
 
 const SIZE = 6;
 const list = new Array(SIZE).fill(0);
@@ -98,17 +101,13 @@ export default function App() {
               currentElementIndexInViewport === 2 ? "active" : ""
             }>
               <h2> Work </h2>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in aliquet lorem. Aliquam imperdiet vitae ipsum vitae tempus. Donec consequat augue quam, ac ornare nulla tincidunt eu. Proin viverra velit fringilla gravida tristique. Proin viverra nulla a metus sodales, at vulputate neque tempor. Donec viverra mauris eget eros ullamcorper, id posuere ex convallis. Suspendisse et blandit odio, sed convallis velit. Quisque dapibus et augue sed rhoncus. In dignissim ornare velit id pharetra. Pellentesque suscipit vulputate dui, vitae malesuada diam suscipit eget. Mauris sit amet urna vitae diam tempus rutrum. Ut facilisis justo eget diam blandit finibus. Nunc ultrices at diam non sodales. Ut luctus porta varius. Morbi fermentum elit suscipit, facilisis metus et, dapibus tellus. Donec rutrum, orci sed malesuada ornare, lacus nisl consectetur urna, eu dapibus dolor diam sed purus.
-              </p>
+              <WorkComponent />
             </section>
             <section id="projects" ref={sectionRefs[3]} className={
               currentElementIndexInViewport === 3 ? "active" : ""
             }>
               <h2> Projects </h2>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in aliquet lorem. Aliquam imperdiet vitae ipsum vitae tempus. Donec consequat augue quam, ac ornare nulla tincidunt eu. Proin viverra velit fringilla gravida tristique. Proin viverra nulla a metus sodales, at vulputate neque tempor. Donec viverra mauris eget eros ullamcorper, id posuere ex convallis. Suspendisse et blandit odio, sed convallis velit. Quisque dapibus et augue sed rhoncus. In dignissim ornare velit id pharetra. Pellentesque suscipit vulputate dui, vitae malesuada diam suscipit eget. Mauris sit amet urna vitae diam tempus rutrum. Ut facilisis justo eget diam blandit finibus. Nunc ultrices at diam non sodales. Ut luctus porta varius. Morbi fermentum elit suscipit, facilisis metus et, dapibus tellus. Donec rutrum, orci sed malesuada ornare, lacus nisl consectetur urna, eu dapibus dolor diam sed purus.
-              </p>
+              <ProjectsComponent />
             </section>
             <section id="interests" ref={sectionRefs[4]} className={
               currentElementIndexInViewport === 4 ? "active" : ""
@@ -120,9 +119,7 @@ export default function App() {
               currentElementIndexInViewport === 5 ? "active" : ""
             }>
               <h2> Contact </h2>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in aliquet lorem. Aliquam imperdiet vitae ipsum vitae tempus. Donec consequat augue quam, ac ornare nulla tincidunt eu. Proin viverra velit fringilla gravida tristique. Proin viverra nulla a metus sodales, at vulputate neque tempor. Donec viverra mauris eget eros ullamcorper, id posuere ex convallis. Suspendisse et blandit odio, sed convallis velit. Quisque dapibus et augue sed rhoncus. In dignissim ornare velit id pharetra. Pellentesque suscipit vulputate dui, vitae malesuada diam suscipit eget. Mauris sit amet urna vitae diam tempus rutrum. Ut facilisis justo eget diam blandit finibus. Nunc ultrices at diam non sodales. Ut luctus porta varius. Morbi fermentum elit suscipit, facilisis metus et, dapibus tellus. Donec rutrum, orci sed malesuada ornare, lacus nisl consectetur urna, eu dapibus dolor diam sed purus.
-              </p>
+              <ContactComponent />
             </section>
           </>
         )}
