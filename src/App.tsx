@@ -37,8 +37,10 @@ export default function App() {
     [3, "#projects"],
     [4, "#interests"],
     [5, "#contact"]
-  ]
-  );
+  ]);
+  function nameToTitle(name: any) : string{
+    return name.charAt(1).toUpperCase() + name.slice(2);
+  }
   return (
     <Container fluid>
       <Scrollspy sectionRefs={sectionRefs}>
@@ -50,7 +52,7 @@ export default function App() {
                   list.map((_, i) => {
                     const name = indexToId.get(i);
                     return (
-                      <Nav.Link href={name}>{name}</Nav.Link>
+                      <Nav.Link href={name}>{nameToTitle(name)}</Nav.Link>
                     )
                   })
                 }
