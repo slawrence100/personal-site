@@ -8,8 +8,8 @@ import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 
 // Images
-import placeholder300 from "./300.png";
 import amr_map from "./amr-planners.png"
+import walking_robot from "./walking-robot-short.gif";
 
 export default function ProjectsComponent() {
   return (
@@ -33,16 +33,15 @@ export default function ProjectsComponent() {
         </div>
         <div>
           <h5>Skills Used</h5>
-          <LogoList ids={["arduino", "git", "python"]} />
+          <LogoList ids={["arduino", "git", "matlab"]} />
         </div>
-
       </Col>
     </Row>
     <br />
     <Row>
       <Col sm={4}>
         <Card>
-          <Card.Img variant="top" src={placeholder300} />
+          <Card.Img variant="top" src={walking_robot} />
           <Card.Body>
             <Card.Title>Walking Robot</Card.Title>
             <Card.Subtitle>INFO 4320: Rapid Prototyping</Card.Subtitle>
@@ -51,10 +50,14 @@ export default function ProjectsComponent() {
       </Col>
       <Col>
         <div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tristique eros eros, id rhoncus arcu tempus ut. Nullam sed metus ut magna lacinia pulvinar. Pellentesque vitae nulla vitae dui eleifend faucibus eu sit amet nisl. Curabitur sed leo in enim dictum gravida.</p>
+          <p>
+            A quadruped robot created for the final project of INFO 4320.
+            My major contributions include the entire electrical and software systems of the robot.
+          </p>
         </div>
         <div>
           <h5> Skills Used</h5>
+          <LogoList ids={["arduino", "python", "autodesk-inventor"]} />
         </div>
       </Col>
     </Row>

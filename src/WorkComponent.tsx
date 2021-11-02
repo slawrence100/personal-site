@@ -4,7 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import placeholder300 from "./300.png";
-
+import LogoList from "./Logo";
 export default function WorkComponent() {
 
 
@@ -26,6 +26,7 @@ export default function WorkComponent() {
           </div>
           <div>
             <h5> Skills Used</h5>
+            <LogoList ids={["react", "python", "git", "typescript"]} />
           </div>
 
         </Col>
@@ -47,6 +48,7 @@ export default function WorkComponent() {
           </div>
           <div>
             <h5> Skills Used</h5>
+            <LogoList ids={["ansible", "kubernetes", "git"]} />
           </div>
         </Col>
       </Row>
