@@ -51,7 +51,7 @@ function Logo(props: {name: string}) {
   const name = props.name;
 
   return (
-    <Card style={{ width: '30%', maxWidth: "30vw" }}>
+    <Card style={{ width: '150px', maxWidth: "30vw" }}>
       <Card.Img 
         variant="top" 
         src={nameToImage.get(name)} 
