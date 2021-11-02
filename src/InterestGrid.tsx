@@ -9,26 +9,26 @@ export default function InterestGrid() {
     <Container>
       <Row>
         <Col>
-          <p>Top Left</p>
+          <p>Instrument playing</p>
         </Col>
         <Col>
-          <p>Top Right</p>
-        </Col>
-      </Row>
-      <Row>
-        <Col>
-          <p>Middle Left</p>
-        </Col>
-        <Col>
-          <p>Middle Right</p>
+          <p>Mandarin Chinese</p>
         </Col>
       </Row>
       <Row>
         <Col>
-          <p>Bottom Left</p>
+          <p>Cooking</p>
         </Col>
         <Col>
-          <p>Bottom Right</p>
+          <p>Sailing?</p>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <p>Journaling?</p>
+        </Col>
+        <Col>
+          <p>Baking</p>
         </Col>
       </Row>
     </Container>
