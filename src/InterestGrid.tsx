@@ -22,13 +22,13 @@ export default function InterestGrid() {
         <Col>
         <Card>
             <Card.Img src={flute_band} />
-            <Card.Title>Wind Instruments</Card.Title>
+            <Card.Title className="handwritten">Wind Instruments</Card.Title>
           </Card>
         </Col>
         <Col>
         <Card>
             <Card.Img src={mandarin} />
-            <Card.Title>Mandarin Chinese</Card.Title>
+            <Card.Title className="handwritten">Mandarin Chinese</Card.Title>
           </Card>
         </Col>
       </Row>
@@ -36,13 +36,13 @@ export default function InterestGrid() {
         <Col>
         <Card>
             <Card.Img src={cooking} />
-            <Card.Title>Cooking</Card.Title>
+            <Card.Title className="handwritten">Cooking</Card.Title>
           </Card>
         </Col>
         <Col>
         <Card>
             <Card.Img src={sailing} />
-            <Card.Title>Sailing</Card.Title>
+            <Card.Title className="handwritten">Sailing</Card.Title>
           </Card>
         </Col>
       </Row>
@@ -50,13 +50,13 @@ export default function InterestGrid() {
         <Col>
           <Card>
             <Card.Img src={journal} />
-            <Card.Title>Journaling</Card.Title>
+            <Card.Title className="handwritten">Journaling</Card.Title>
           </Card>
         </Col>
         <Col>
         <Card>
             <Card.Img src={baking} />
-            <Card.Title>Baking</Card.Title>
+            <Card.Title className="handwritten">Baking</Card.Title>
           </Card>
           </Col>
       </Row>

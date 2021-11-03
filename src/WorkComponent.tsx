@@ -26,7 +26,7 @@ export default function WorkComponent() {
         <Col>
           <div>
             <p>
-              I designed and implemented constructed a robotic schedule visualization proof-of-concept
+              I designed and implemented a robotic schedule visualization proof-of-concept
               to help hasten debugging efforts for high-severity issues, involving independently meeting
               across teams to create the best designs and follow best practices.
             </p>

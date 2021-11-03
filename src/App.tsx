@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { Scrollspy } from "@makotot/ghostui";
-import "./App.css";
+
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -11,6 +11,7 @@ import Button from "react-bootstrap/Button";
 import Navbar from "react-bootstrap/Navbar";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "./App.css";
 import placeholder300 from "./300.png";
 import { Nav } from "react-bootstrap";
 import WorkComponent from "./WorkComponent";
@@ -38,7 +39,7 @@ export default function App() {
     [4, "#interests"],
     [5, "#contact"]
   ]);
-  function nameToTitle(name: any) : string{
+  function nameToTitle(name: any): string {
     return name.charAt(1).toUpperCase() + name.slice(2);
   }
   return (
@@ -51,8 +52,15 @@ export default function App() {
                 {
                   list.map((_, i) => {
                     const name = indexToId.get(i);
+                    if (i === currentElementIndexInViewport) {
+                      return (
+                        <Nav.Link href={name}>
+                          {nameToTitle(name)}
+                        </Nav.Link>
+                      )
+                    }
                     return (
-                      <Nav.Link href={name}>{nameToTitle(name)}</Nav.Link>
+                      <Nav.Link href={name} className="nav-link">{nameToTitle(name)}</Nav.Link>
                     )
                   })
                 }
@@ -63,8 +71,8 @@ export default function App() {
                 <Container fluid>
                   <Row>
                     <Col>
-                      <h1>Sydney Lawrence</h1>
-                      <sub>Software and Robotics Engineer</sub>
+                      <h1 className="roboto">Sydney Lawrence</h1>
+                      <sub className="code">Software and Robotics Engineer</sub>
                     </Col>
                   </Row>
                 </Container>
