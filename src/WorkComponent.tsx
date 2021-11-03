@@ -33,7 +33,7 @@ export default function WorkComponent() {
           </div>
           <div>
             <h5> Skills Used</h5>
-            <LogoList ids={["react", "python", "git", "typescript"]} />
+            <LogoList ids={["aws","react", "python", "git", "typescript"]} />
           </div>
 
         </Col>

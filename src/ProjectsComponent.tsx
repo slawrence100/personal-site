@@ -52,7 +52,7 @@ export default function ProjectsComponent() {
         <Col>
           <div>
             <p>
-              A quadruped robot created for the final project of INFO 4320.
+              A quadruped robot created for the final group project of INFO 4320.
               My major contributions include the entire electrical and software systems of the robot.
             </p>
           </div>
@@ -62,6 +62,7 @@ export default function ProjectsComponent() {
           </div>
         </Col>
       </Row>
+      <br />
       <Row>
         <Col sm={4}>
           <Card>
@@ -76,7 +77,7 @@ export default function ProjectsComponent() {
           <div>
             <p>
               An educational, cost-effective robotics platform with an innovative computer vision system.
-              My major contributions include becoming CS lead, creating the user program interpretation system,
+              My major contributions include interfacing across teams as CS lead, creating the user program interpretation system,
               redesigning the computer vision system,and writing an enhanced message protocol on the robot's
               onboard embedded system to facilitate simulation efforts.
             </p>
