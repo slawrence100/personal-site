@@ -82,6 +82,7 @@ export default function InterestGrid() {
           </Card>
         </Col>
       </Row>
+      <br />
       <Row>
         <Col>
         <Card className="hoverable" onClick={() => {
@@ -110,6 +111,7 @@ export default function InterestGrid() {
           </Card>
         </Col>
       </Row>
+      <br />
       <Row>
         <Col>
         <Card className="hoverable" onClick={() => {
