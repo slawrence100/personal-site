@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { Scrollspy } from "@makotot/ghostui";
 
+// Bootstrap components
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -9,11 +10,12 @@ import InterestGrid from "./InterestGrid";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Navbar from "react-bootstrap/Navbar";
-
+import Nav from "react-bootstrap/Nav";
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 import "./App.css";
-import placeholder300 from "./300.png";
-import { Nav } from "react-bootstrap";
+import work_photo from './work-photo-small.jpg'
 import WorkComponent from "./WorkComponent";
 import ProjectsComponent from "./ProjectsComponent";
 import ContactComponent from "./ContactComponent";
@@ -21,7 +23,7 @@ import ContactComponent from "./ContactComponent";
 const SIZE = 6;
 const list = new Array(SIZE).fill(0);
 
-// Template from https://github.com/makotot/GhostUI
+// Template from example in https://github.com/makotot/GhostUI
 
 export default function App() {
   const sectionRefs = [
@@ -47,7 +49,10 @@ export default function App() {
       <Scrollspy sectionRefs={sectionRefs}>
         {({ currentElementIndexInViewport }) => (
           <>
-            <Navbar expand={true} sticky="top">
+            
+            <Navbar expand={"sm"} sticky="top">
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+            <Navbar.Collapse id="responsive-navbar-nav">
               <Nav>
                 {
                   list.map((_, i) => {
@@ -65,7 +70,9 @@ export default function App() {
                   })
                 }
               </Nav>
+              </Navbar.Collapse>
             </Navbar>
+            
             <Row ref={sectionRefs[0]}>
               <div id="home" className="centered">
                 <Container fluid>
@@ -86,7 +93,7 @@ export default function App() {
                 <Row>
                   <Col sm={4}>
                     <Card>
-                      <Card.Img variant="top" src={placeholder300} />
+                      <Card.Img variant="top" src={work_photo} />
                       <Card.Body>
                         <Card.Title>Sydney Lawrence</Card.Title>
                         <Card.Subtitle>Current student at Cornell University</Card.Subtitle>
@@ -95,7 +102,9 @@ export default function App() {
                   </Col>
                   <Col sm={8}>
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in aliquet lorem. Aliquam imperdiet vitae ipsum vitae tempus. Donec consequat augue quam, ac ornare nulla tincidunt eu. Proin viverra velit fringilla gravida tristique. Proin viverra nulla a metus sodales, at vulputate neque tempor. Donec viverra mauris eget eros ullamcorper, id posuere ex convallis. Suspendisse et blandit odio, sed convallis velit. Quisque dapibus et augue sed rhoncus. In dignissim ornare velit id pharetra. Pellentesque suscipit vulputate dui, vitae malesuada diam suscipit eget. Mauris sit amet urna vitae diam tempus rutrum. Ut facilisis justo eget diam blandit finibus. Nunc ultrices at diam non sodales. Ut luctus porta varius. Morbi fermentum elit suscipit, facilisis metus et, dapibus tellus. Donec rutrum, orci sed malesuada ornare, lacus nisl consectetur urna, eu dapibus dolor diam sed purus.
+                      I am a current student at Cornell University studying Computer Science with the Robotics minor.
+                      My career goals are to constantly learn and apply new technological knowledge to create impact
+                      on the world around me.
                     </p>
                     <br />
                     <Form>
