@@ -6,11 +6,16 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
+import Image from 'react-bootstrap/Image';
+import Carousel from 'react-bootstrap/Carousel';
 
 // Images
 import amr_map from "./amr-planners.png"
 import walking_robot from "./walking-robot-short.gif";
 import minibot from "./minibot.png";
+import minibot_project_1 from "./minibot-project-1.png";
+import minibot_project_2 from "./minibot-project-2.png";
+import minibot_project_3 from "./minibot-project-3.jpg";
 
 export default function ProjectsComponent() {
   return (
@@ -38,6 +43,7 @@ export default function ProjectsComponent() {
           </div>
         </Col>
       </Row>
+      <hr />
       <br />
       <Row>
         <Col sm={4}>
@@ -62,6 +68,7 @@ export default function ProjectsComponent() {
           </div>
         </Col>
       </Row>
+      <hr />
       <br />
       <Row>
         <Col sm={4}>
@@ -82,6 +89,20 @@ export default function ProjectsComponent() {
               onboard embedded system to facilitate simulation efforts.
             </p>
           </div>
+          <div>
+            <h5>Featured Images</h5>
+            <Carousel variant="dark" style={{ maxWidth: "80%", height: "500px", margin: "auto" }}>
+              <Carousel.Item>
+                <Image src={minibot_project_1} fluid />
+                </Carousel.Item>
+                <Carousel.Item>
+                  <Image src={minibot_project_2} fluid />
+                </Carousel.Item>
+                <Carousel.Item>
+                  <Image src={minibot_project_3} fluid style={{ width: "auto", height: "400px", margin: "auto" }} />
+                </Carousel.Item>
+            </Carousel>
+            </div>
           <div>
             <h5> Skills Used</h5>
             <LogoList ids={["arduino", "python", "react"]} />

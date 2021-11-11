@@ -1,12 +1,18 @@
 import React from "react";
+
+// Bootstrap
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
+import Carousel from 'react-bootstrap/Carousel';
+import Image from 'react-bootstrap/Image';
 
 import ar from "./amazon-robotics.jpg";
-import mitre from "./mitre-logo.png";
+import ar_work_1 from "./ar-work-1.jpg";
+import ar_work_2 from "./ar-work-2.jpg";
 
+import mitre from "./mitre-logo.png";
 import LogoList from "./Logo";
 
 export default function WorkComponent() {
@@ -17,7 +23,6 @@ export default function WorkComponent() {
           <Card>
             <Card.Img variant="top" src={ar} />
             <Card.Body>
-              {/* TODO use a CAROUSEL here! */}
               <Card.Title>Amazon Robotics</Card.Title>
               <Card.Subtitle>Westboro, MA (Remote)</Card.Subtitle>
             </Card.Body>
@@ -32,12 +37,23 @@ export default function WorkComponent() {
             </p>
           </div>
           <div>
-            <h5> Skills Used</h5>
-            <LogoList ids={["aws","react", "python", "git", "typescript"]} />
+            <h5>Featured Images</h5>
+            <Carousel variant="dark" style={{ maxWidth: "80%", height: "500px", margin: "auto" }}>
+              <Carousel.Item>
+                <Image src={ar_work_1} alt="UI design" fluid />
+              </Carousel.Item>
+              <Carousel.Item>
+                <Image src={ar_work_2} alt="Data diagram" fluid />
+              </Carousel.Item>
+            </Carousel>
           </div>
-
+          <div>
+            <h5> Skills Used</h5>
+            <LogoList ids={["aws", "react", "python", "git", "typescript"]} />
+          </div>
         </Col>
       </Row>
+      <hr />
       <br />
       <Row>
         <Col sm={4}>
