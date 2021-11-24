@@ -17,6 +17,8 @@ import minibot_project_1 from "./minibot-project-1.png";
 import minibot_project_2 from "./minibot-project-2.png";
 import minibot_project_3 from "./minibot-project-3.jpg";
 
+import "./App.css";
+
 export default function ProjectsComponent() {
   return (
     <Container>
@@ -91,15 +93,15 @@ export default function ProjectsComponent() {
           </div>
           <div>
             <h5>Featured Images</h5>
-            <Carousel variant="dark" style={{ maxWidth: "80%", height: "500px", margin: "auto" }}>
+            <Carousel controls={false} variant="dark" className="img-carousel" interval={3000}>
               <Carousel.Item>
-                <Image src={minibot_project_1} fluid />
+                <Image src={minibot_project_1} fluid style={{maxHeight: "400px", margin: "auto" }} />
                 </Carousel.Item>
                 <Carousel.Item>
-                  <Image src={minibot_project_2} fluid />
+                  <Image src={minibot_project_2} fluid style={{maxHeight: "400px", margin: "auto" }} />
                 </Carousel.Item>
                 <Carousel.Item>
-                  <Image src={minibot_project_3} fluid style={{ width: "auto", height: "400px", margin: "auto" }} />
+                  <Image src={minibot_project_3} fluid style={{maxHeight: "400px", margin: "auto" }} />
                 </Carousel.Item>
             </Carousel>
             </div>

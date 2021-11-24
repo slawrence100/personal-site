@@ -55,7 +55,7 @@ function Logo(props: {name: string}) {
       <Card.Img 
         variant="top" 
         src={nameToImage.get(name)} 
-        style={{padding: "10px"}}  
+        style={{padding: "10px", margin: "auto"}}
       /> 
       <Card.Title>{nameToTitle(name)}</Card.Title>
     </Card>

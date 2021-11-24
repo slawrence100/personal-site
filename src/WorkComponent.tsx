@@ -38,7 +38,7 @@ export default function WorkComponent() {
           </div>
           <div>
             <h5>Featured Images</h5>
-            <Carousel variant="dark" style={{ maxWidth: "80%", height: "500px", margin: "auto" }}>
+            <Carousel controls={false} variant="dark" className="image-carousel" interval={3000}>
               <Carousel.Item>
                 <Image src={ar_work_1} alt="UI design" fluid />
               </Carousel.Item>

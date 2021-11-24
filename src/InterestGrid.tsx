@@ -42,7 +42,7 @@ export default function InterestGrid() {
           <Container>
             <Row>
               <Col>
-                <Image src={modalState.image} style={{width: "100%"}} />
+                <Image src={modalState.image} style={{ width: "100%" }} />
               </Col>
               <Col>
                 <p>
@@ -56,7 +56,11 @@ export default function InterestGrid() {
       </Modal>
       <Row>
         <Col>
-          <Card className="hoverable" onClick={() => {
+          <p style={{textAlign: "center"}}>Click on an interest to learn more</p>
+        </Col>
+      </Row>
+      <Row>
+          <Card role="button" className="hoverable interest-card" onClick={() => {
             setModalState({
               title: "Wind Instruments",
               image: flute_band,
@@ -64,12 +68,10 @@ export default function InterestGrid() {
             })
             setShow(true)
           }}>
-            <Card.Img src={flute_band}/>
+            <Card.Img src={flute_band} />
             <Card.Title className="handwritten">Wind Instruments</Card.Title>
           </Card>
-        </Col>
-        <Col>
-        <Card className="hoverable" onClick={() => {
+          <Card role="button" className="hoverable interest-card" onClick={() => {
             setModalState({
               title: "Mandarin Chinese",
               image: mandarin,
@@ -80,12 +82,7 @@ export default function InterestGrid() {
             <Card.Img src={mandarin} />
             <Card.Title className="handwritten">Mandarin Chinese</Card.Title>
           </Card>
-        </Col>
-      </Row>
-      <br />
-      <Row>
-        <Col>
-        <Card className="hoverable" onClick={() => {
+          <Card role="button" className="hoverable interest-card" onClick={() => {
             setModalState({
               title: "Cooking",
               image: cooking,
@@ -96,9 +93,7 @@ export default function InterestGrid() {
             <Card.Img src={cooking} />
             <Card.Title className="handwritten">Cooking</Card.Title>
           </Card>
-        </Col>
-        <Col>
-        <Card className="hoverable" onClick={() => {
+          <Card role="button" className="hoverable interest-card" onClick={() => {
             setModalState({
               title: "Sailing",
               image: sailing,
@@ -109,12 +104,7 @@ export default function InterestGrid() {
             <Card.Img src={sailing} />
             <Card.Title className="handwritten">Sailing</Card.Title>
           </Card>
-        </Col>
-      </Row>
-      <br />
-      <Row>
-        <Col>
-        <Card className="hoverable" onClick={() => {
+          <Card role="button" className="hoverable interest-card" onClick={() => {
             setModalState({
               title: "Journaling",
               image: journal,
@@ -125,9 +115,7 @@ export default function InterestGrid() {
             <Card.Img src={journal} />
             <Card.Title className="handwritten">Journaling</Card.Title>
           </Card>
-        </Col>
-        <Col>
-        <Card className="hoverable" onClick={() => {
+          <Card role="button" className="hoverable interest-card" onClick={() => {
             setModalState({
               title: "Baking",
               image: baking,
@@ -138,7 +126,6 @@ export default function InterestGrid() {
             <Card.Img src={baking} />
             <Card.Title className="handwritten">Baking</Card.Title>
           </Card>
-        </Col>
       </Row>
     </Container>
   )

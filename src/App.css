@@ -65,3 +65,27 @@ h2 {
   box-shadow: 0 0 11px #6e6e6e;
   color: black;
 }
+
+.carousel-inner img {
+  padding: 10px;
+  margin: auto;
+}
+
+.interest-card {
+  max-width: 25vw;
+  margin: 5px;
+}
+
+.img-carousel {
+  max-width: 80%;
+  min-height: 250px;
+  max-height: 450px;
+  margin: auto;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  [class*="interest-card"] {
+    max-width: 70vw;
+  }
+}
