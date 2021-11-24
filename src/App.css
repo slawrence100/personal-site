@@ -83,9 +83,48 @@ h2 {
   margin: auto;
 }
 
+.white {
+  color: white;
+}
+
+/* Typing animation code adapted from https://css-tricks.com/snippets/css/typewriter-effect/ */
+.typewriter {
+  overflow: hidden;
+  border-right: .30em solid white; /* cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* scroll while typing */
+  animation: 
+    typing 4s steps(40, end),
+    blink-cursor 1s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 20% }
+}
+
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
   [class*="interest-card"] {
     max-width: 70vw;
   }
+  [class*="typewriter"] {
+    overflow: hidden;
+    border-right: .30em solid white;
+    white-space: nowrap;
+    margin: 0 auto;
+    animation: 
+      typing 4s steps(20, end),
+      blink-cursor 1s step-end infinite;
+  }
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 90% }
+  }
+}
+
+@keyframes blink-cursor {
+  from, to { border-color: transparent }
+  50% { border-color: white; }
 }

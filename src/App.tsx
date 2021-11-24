@@ -74,16 +74,16 @@ export default function App() {
             </Navbar>
             
             <Row ref={sectionRefs[0]}>
-              <div id="home" className="centered">
+              <div id="home" className="centered" style={{backgroundColor: "black"}}>
                 <Container fluid>
                   <Row>
                     <Col>
-                      <h1 className="roboto">Sydney Lawrence</h1>
-                      <sub className="code">Software and Robotics Engineer</sub>
+                      <h1 className="white roboto typewriter">Sydney Lawrence</h1>
+                      <sub className="white code">Software and Robotics Engineer</sub>
                     </Col>
                   </Row>
                 </Container>
-              </div>
+                </div>
             </Row>
             <section id="about" ref={sectionRefs[1]} className={
               currentElementIndexInViewport === 1 ? "active" : ""
