@@ -19,7 +19,8 @@ import minibot_project_3 from "./minibot-project-3.jpg";
 
 import "./App.css";
 
-export default function ProjectsComponent() {
+export default function ProjectsComponent(props : any) {
+  const { skill } = props;
   return (
     <Container>
       <Row>
@@ -41,7 +42,7 @@ export default function ProjectsComponent() {
           </div>
           <div>
             <h5>Skills Used</h5>
-            <LogoList ids={["git", "matlab"]} />
+            <LogoList skill={skill} ids={["git", "matlab"]} />
           </div>
         </Col>
       </Row>
@@ -66,7 +67,7 @@ export default function ProjectsComponent() {
           </div>
           <div>
             <h5> Skills Used</h5>
-            <LogoList ids={["arduino", "python", "autodesk-inventor"]} />
+            <LogoList skill={skill} ids={["arduino", "python", "autodesk-inventor"]} />
           </div>
         </Col>
       </Row>
@@ -107,7 +108,7 @@ export default function ProjectsComponent() {
             </div>
           <div>
             <h5> Skills Used</h5>
-            <LogoList ids={["arduino", "python", "react"]} />
+            <LogoList skill={skill} ids={["arduino", "python", "react"]} />
           </div>
         </Col>
       </Row>

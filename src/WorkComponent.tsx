@@ -15,7 +15,9 @@ import ar_work_2 from "./ar-work-2.jpg";
 import mitre from "./mitre-logo.png";
 import LogoList from "./Logo";
 
-export default function WorkComponent() {
+export default function WorkComponent(props : any) {
+  const { skill } = props;
+
   return (
     <Container>
       <Row>
@@ -49,7 +51,7 @@ export default function WorkComponent() {
           </div>
           <div>
             <h5> Skills Used</h5>
-            <LogoList ids={["aws", "react", "python", "git", "typescript"]} />
+            <LogoList skill={skill} ids={["aws", "react", "python", "git", "typescript"]} />
           </div>
         </Col>
       </Row>
@@ -76,7 +78,7 @@ export default function WorkComponent() {
           </div>
           <div>
             <h5> Skills Used</h5>
-            <LogoList ids={["ansible", "kubernetes", "git"]} />
+            <LogoList skill={skill} ids={["ansible", "kubernetes", "git"]} />
           </div>
         </Col>
       </Row>

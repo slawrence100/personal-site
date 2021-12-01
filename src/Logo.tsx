@@ -16,15 +16,20 @@ import matlab_logo from "./matlab-logo.png";
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 
-export default function LogoList(props: {ids: string[]}) {
+export default function LogoList(props: { skill: string, ids: string[] }) {
   return (
     <Row>
-      {props.ids.map((id) => <Logo name={id} />)}
+      {props.ids.map((id) => {
+        if (id === props.skill) {
+          return (<Logo name={id} selected />)
+        }
+        return (<Logo name={id} />)
+      })}
     </Row>
   )
 }
 
-function Logo(props: {name: string}) {
+function Logo(props: { name: string, selected?: boolean}) {
   const nameToImage = new Map([
     ["aws", aws_logo],
     ["autodesk-inventor", autodesk_inventor_logo],
@@ -40,7 +45,7 @@ function Logo(props: {name: string}) {
     ["matlab", matlab_logo]
   ]);
 
-  function nameToTitle(name: string) : string{
+  function nameToTitle(name: string): string {
     if (name === "aws") {
       return "Amazon Web Services";
     } else if (name === "autodesk-inventor") {
@@ -51,12 +56,15 @@ function Logo(props: {name: string}) {
   const name = props.name;
 
   return (
-    <Card style={{ width: '150px', maxWidth: "30vw" }}>
-      <Card.Img 
-        variant="top" 
-        src={nameToImage.get(name)} 
-        style={{padding: "10px", margin: "auto"}}
-      /> 
+    <Card 
+      style={{ width: '150px', maxWidth: "30vw" }}
+      className={(props.selected) ? "" : "grayout"}
+    >
+      <Card.Img
+        variant="top"
+        src={nameToImage.get(name)}
+        style={{ padding: "10px", margin: "auto" }}
+      />
       <Card.Title>{nameToTitle(name)}</Card.Title>
     </Card>
   )

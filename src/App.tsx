@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { Scrollspy } from "@makotot/ghostui";
 
 // Bootstrap components
@@ -26,6 +26,7 @@ const list = new Array(SIZE).fill(0);
 // Template from example in https://github.com/makotot/GhostUI
 
 export default function App() {
+  const [skill, setSkill] = useState("");
   const sectionRefs = [
     useRef<HTMLDivElement>(null),
     useRef<HTMLDivElement>(null),
@@ -33,6 +34,8 @@ export default function App() {
     useRef<HTMLDivElement>(null),
     useRef<HTMLDivElement>(null)
   ];
+  const queryRef = useRef(null);
+  let tempQuery = "";
   const indexToId = new Map([
     [0, "#home"],
     [1, "#about"],
@@ -41,6 +44,7 @@ export default function App() {
     [4, "#interests"],
     [5, "#contact"]
   ]);
+
   function nameToTitle(name: any): string {
     return name.charAt(1).toUpperCase() + name.slice(2);
   }
@@ -109,8 +113,15 @@ export default function App() {
                     <br />
                     <Form>
                       <Form.Label>Search for my skills</Form.Label>
-                      <Form.Control type="text" placeholder="Kubernetes, Teamwork, ROS..." />
-                      <Button variant="primary" type="submit"> Go </Button>
+                      <Form.Control 
+                        ref={queryRef}
+                        type="text" 
+                        placeholder="Kubernetes, Teamwork, ROS..." 
+                        onChange={(e) => {tempQuery = e.target.value}}/>
+                      <Button variant="primary" type="submit" onClick={(e) => {
+                        e.preventDefault();
+                        setSkill(tempQuery);
+                      }}> Go </Button>
                     </Form>
                   </Col>
                 </Row>
@@ -120,13 +131,13 @@ export default function App() {
               currentElementIndexInViewport === 2 ? "active" : ""
             }>
               <h2> Work </h2>
-              <WorkComponent />
+              <WorkComponent skill={skill} />
             </section>
             <section id="projects" ref={sectionRefs[3]} className={
               currentElementIndexInViewport === 3 ? "active" : ""
             }>
               <h2> Projects </h2>
-              <ProjectsComponent />
+              <ProjectsComponent skill={skill} />
             </section>
             <section id="interests" ref={sectionRefs[4]} className={
               currentElementIndexInViewport === 4 ? "active" : ""

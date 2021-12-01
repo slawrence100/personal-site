@@ -98,6 +98,10 @@ h2 {
     blink-cursor 1s step-end infinite;
 }
 
+.grayout {
+  filter: grayscale(100%);
+}
+
 /* The typing effect */
 @keyframes typing {
   from { width: 0 }
