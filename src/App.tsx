@@ -48,37 +48,53 @@ export default function App() {
   function nameToTitle(name: any): string {
     return name.charAt(1).toUpperCase() + name.slice(2);
   }
+
+  const nameToSkillTitle = new Map([
+    ["aws", "AWS"],
+    ["autodesk-inventor", "Autodesk Inventor"],
+    ["ansible", "Ansible"],
+    ["arduino", "Arduino"],
+    ["docker", "Docker"],
+    ["git", "Git"],
+    ["java", "Java"],
+    ["kubernetes", "Kubernetes"],
+    ["python", "Python"],
+    ["react", "React"],
+    ["typescript", "Typescript"],
+    ["matlab", "Matlab"]
+  ]);
+
   return (
     <Container fluid>
       <Scrollspy sectionRefs={sectionRefs}>
         {({ currentElementIndexInViewport }) => (
           <>
-            
+
             <Navbar expand={"sm"} sticky="top">
-            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-            <Navbar.Collapse id="responsive-navbar-nav">
-              <Nav>
-                {
-                  list.map((_, i) => {
-                    const name = indexToId.get(i);
-                    if (i === currentElementIndexInViewport) {
+              <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+              <Navbar.Collapse id="responsive-navbar-nav">
+                <Nav>
+                  {
+                    list.map((_, i) => {
+                      const name = indexToId.get(i);
+                      if (i === currentElementIndexInViewport) {
+                        return (
+                          <Nav.Link href={name}>
+                            {nameToTitle(name)}
+                          </Nav.Link>
+                        )
+                      }
                       return (
-                        <Nav.Link href={name}>
-                          {nameToTitle(name)}
-                        </Nav.Link>
+                        <Nav.Link href={name} className="nav-link">{nameToTitle(name)}</Nav.Link>
                       )
-                    }
-                    return (
-                      <Nav.Link href={name} className="nav-link">{nameToTitle(name)}</Nav.Link>
-                    )
-                  })
-                }
-              </Nav>
+                    })
+                  }
+                </Nav>
               </Navbar.Collapse>
             </Navbar>
-            
+
             <Row ref={sectionRefs[0]}>
-              <div id="home" className="centered" style={{backgroundColor: "black"}}>
+              <div id="home" className="centered" style={{ backgroundColor: "black" }}>
                 <Container fluid>
                   <Row>
                     <Col>
@@ -87,7 +103,7 @@ export default function App() {
                     </Col>
                   </Row>
                 </Container>
-                </div>
+              </div>
             </Row>
             <section id="about" ref={sectionRefs[1]} className={
               currentElementIndexInViewport === 1 ? "active" : ""
@@ -112,16 +128,16 @@ export default function App() {
                     </p>
                     <br />
                     <Form>
-                      <Form.Label>Search for my skills</Form.Label>
-                      <Form.Control 
-                        ref={queryRef}
-                        type="text" 
-                        placeholder="Kubernetes, Teamwork, ROS..." 
-                        onChange={(e) => {tempQuery = e.target.value}}/>
-                      <Button variant="primary" type="submit" onClick={(e) => {
-                        e.preventDefault();
-                        setSkill(tempQuery);
-                      }}> Go </Button>
+                      <Form.Label>Highlight a Skill</Form.Label>
+                      <Form.Select
+                        onChange={(e: React.ChangeEvent<HTMLSelectElement>) => {
+                          tempQuery = e.target.value; setSkill(tempQuery);
+                        }}>
+                        {
+                          Array.from(nameToSkillTitle.keys()).map((k) => (<option value={k}>{nameToSkillTitle.get(k)}</option>))
+                        }
+                      </Form.Select>
+                      <Form.Label>Highlighted skills will appear in orange.</Form.Label>
                     </Form>
                   </Col>
                 </Row>

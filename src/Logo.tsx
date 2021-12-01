@@ -58,7 +58,7 @@ function Logo(props: { name: string, selected?: boolean}) {
   return (
     <Card 
       style={{ width: '150px', maxWidth: "30vw" }}
-      className={(props.selected) ? "" : "grayout"}
+      className={(props.selected) ? "highlight-skill" : ""}
     >
       <Card.Img
         variant="top"

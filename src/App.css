@@ -98,8 +98,8 @@ h2 {
     blink-cursor 1s step-end infinite;
 }
 
-.grayout {
-  filter: grayscale(100%);
+.highlight-skill {
+  filter: drop-shadow(0 0 30px #FFA62B) brightness(120%);
 }
 
 /* The typing effect */
