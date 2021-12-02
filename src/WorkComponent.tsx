@@ -15,73 +15,91 @@ import ar_work_2 from "./ar-work-2.jpg";
 import mitre from "./mitre-logo.png";
 import LogoList from "./Logo";
 
-export default function WorkComponent(props : any) {
-  const { skill } = props;
+export interface WorkItemData {
+  title: string,
+  subtitle: string,
+  company_img: string,
+  desc: string,
+  img_src: string[],
+  img_alt: string[],
+  skill_ids: string[]
+}
 
+function range(len: number) : number[] {
+  return Array(len).fill(0).map((x,i) => i);
+} 
+
+export function WorkItem(skill: string, item: WorkItemData) {
+  const {title, subtitle, company_img, desc, img_src, img_alt, skill_ids} = item;
   return (
-    <Container>
+    <>
       <Row>
         <Col sm={4}>
           <Card>
-            <Card.Img variant="top" src={ar} />
+            <Card.Img variant="top" src={company_img} />
             <Card.Body>
-              <Card.Title>Amazon Robotics</Card.Title>
-              <Card.Subtitle>Westboro, MA (Remote)</Card.Subtitle>
+              <Card.Title>{title}</Card.Title>
+              <Card.Subtitle>{subtitle}</Card.Subtitle>
             </Card.Body>
           </Card>
         </Col>
         <Col>
           <div>
-            <p>
-              I designed and implemented a robotic schedule visualization proof-of-concept
-              to help hasten debugging efforts for high-severity issues, involving independently meeting
-              across teams to create the best designs and follow best practices.
-            </p>
+            <p>{desc}</p>
           </div>
-          <div>
+          {img_src.length !== 0 && (<div>
             <h5>Featured Images</h5>
             <Carousel controls={false} variant="dark" className="image-carousel" interval={3000}>
-              <Carousel.Item>
-                <Image src={ar_work_1} alt="UI design" fluid />
-              </Carousel.Item>
-              <Carousel.Item>
-                <Image src={ar_work_2} alt="Data diagram" fluid />
-              </Carousel.Item>
+              {range(img_src.length).map((n) => (
+                <Carousel.Item>
+                  <Image src={img_src[n]} alt={img_alt[n]} fluid />
+                </Carousel.Item>
+              ))}
             </Carousel>
-          </div>
+          </div>)}
           <div>
             <h5> Skills Used</h5>
-            <LogoList skill={skill} ids={["aws", "react", "python", "git", "typescript"]} />
+            <LogoList skill={skill} ids={skill_ids} />
           </div>
         </Col>
       </Row>
       <hr />
       <br />
-      <Row>
-        <Col sm={4}>
-          <Card>
-            <Card.Img variant="top" src={mitre} />
-            <Card.Body>
-              <Card.Title>The MITRE Corporation</Card.Title>
-              <Card.Subtitle>Bedford, MA (Remote)</Card.Subtitle>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col>
-          <div>
-            <p>
-              I worked on the Software Factory infrastructure-as-a-service project,
-              utilizing Kubernetes, Ansible, and Helm to resolve issues with
-              its single-sign-on system and other code quality and site
-              reliability services.
-            </p>
-          </div>
-          <div>
-            <h5> Skills Used</h5>
-            <LogoList skill={skill} ids={["ansible", "kubernetes", "git"]} />
-          </div>
-        </Col>
-      </Row>
+    </>
+  )
+}
+
+
+export const data : WorkItemData[] = [
+  {
+    title: "Amazon Robotics",
+    subtitle: "Westboro, MA (Remote)",
+    company_img: ar,
+    desc: "I designed and implemented a robotic schedule visualization proof-of-concept" +
+    "to help hasten debugging efforts for high-severity issues, involving independently meeting" +
+    "across teams to create the best designs and follow best practices.",
+    img_src: [ar_work_1, ar_work_2],
+    img_alt: ["UI Design", "Data diagram"],
+    skill_ids: ["aws", "react", "python", "git", "typescript"]
+  },
+  {
+    title: "The MITRE Corporation",
+    subtitle: "Bedford, MA (Remote)",
+    company_img: mitre,
+    desc: "I worked on the Software Factory infrastructure-as-a-service project," +
+    "utilizing Kubernetes, Ansible, and Helm to resolve issues with" +
+    "its single-sign-on system and other code quality and site reliability services.",
+    img_src: [],
+    img_alt: [],
+    skill_ids: ["ansible", "kubernetes", "git"]
+  }
+]
+export default function WorkComponent(props: any) {
+  const { skill } = props;
+
+  return (
+    <Container>
+      {data.map((d:WorkItemData) => WorkItem(skill, d))}
     </Container>
   )
 }

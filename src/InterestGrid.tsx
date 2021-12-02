@@ -97,7 +97,7 @@ export default function InterestGrid() {
             setModalState({
               title: "Sailing",
               image: sailing,
-              longDescription: "I sailed a 420 around Cayuga Lake as part of a class at Cornell, and I'm fascinated with its physics how fast movement without engines can be."
+              longDescription: "I sailed a small (420-cm) around Cayuga Lake as part of a class at Cornell, and I'm fascinated with its physics how fast movement without engines can be."
             })
             setShow(true)
           }}>

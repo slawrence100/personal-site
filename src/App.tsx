@@ -8,7 +8,6 @@ import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import InterestGrid from "./InterestGrid";
 import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -34,7 +33,6 @@ export default function App() {
     useRef<HTMLDivElement>(null),
     useRef<HTMLDivElement>(null)
   ];
-  const queryRef = useRef(null);
   let tempQuery = "";
   const indexToId = new Map([
     [0, "#home"],
