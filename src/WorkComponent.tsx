@@ -29,7 +29,7 @@ function range(len: number) : number[] {
   return Array(len).fill(0).map((x,i) => i);
 } 
 
-export function WorkItem(skill: string, item: WorkItemData) {
+export function WorkItem(skill: string, item: WorkItemData, skillUpdater: Function) {
   const {title, subtitle, company_img, desc, img_src, img_alt, skill_ids} = item;
   return (
     <>
@@ -59,7 +59,7 @@ export function WorkItem(skill: string, item: WorkItemData) {
           </div>)}
           <div>
             <h5> Skills Used</h5>
-            <LogoList skill={skill} ids={skill_ids} />
+            <LogoList skill={skill} ids={skill_ids} updater={skillUpdater}/>
           </div>
         </Col>
       </Row>
@@ -95,11 +95,11 @@ export const data : WorkItemData[] = [
   }
 ]
 export default function WorkComponent(props: any) {
-  const { skill } = props;
+  const { skill, skillUpdater } = props;
 
   return (
     <Container>
-      {data.map((d:WorkItemData) => WorkItem(skill, d))}
+      {data.map((d:WorkItemData) => WorkItem(skill, d, skillUpdater))}
     </Container>
   )
 }

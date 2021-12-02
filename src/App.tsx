@@ -126,6 +126,7 @@ export default function App() {
                     </p>
                     <br />
                     <Form>
+                      <h4>Searching for a skill? </h4>
                       <Form.Label>Highlight a Skill</Form.Label>
                       <Form.Select
                         onChange={(e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -135,7 +136,10 @@ export default function App() {
                           Array.from(nameToSkillTitle.keys()).map((k) => (<option value={k}>{nameToSkillTitle.get(k)}</option>))
                         }
                       </Form.Select>
-                      <Form.Label>Highlighted skills will appear in orange.</Form.Label>
+                      <Form.Label>
+                        Alternatively, click on a skill's icon to highlight it across the site.
+                        Highlighted skills will appear in orange.
+                      </Form.Label>
                     </Form>
                   </Col>
                 </Row>
@@ -145,13 +149,13 @@ export default function App() {
               currentElementIndexInViewport === 2 ? "active" : ""
             }>
               <h2> Work </h2>
-              <WorkComponent skill={skill} />
+              <WorkComponent skill={skill} skillUpdater={setSkill}/>
             </section>
             <section id="projects" ref={sectionRefs[3]} className={
               currentElementIndexInViewport === 3 ? "active" : ""
             }>
               <h2> Projects </h2>
-              <ProjectsComponent skill={skill} />
+              <ProjectsComponent skill={skill} skillUpdater={setSkill}/>
             </section>
             <section id="interests" ref={sectionRefs[4]} className={
               currentElementIndexInViewport === 4 ? "active" : ""

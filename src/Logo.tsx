@@ -16,20 +16,20 @@ import matlab_logo from "./matlab-logo.png";
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 
-export default function LogoList(props: { skill: string, ids: string[] }) {
+export default function LogoList(props: { skill: string, ids: string[], updater: Function }) {
   return (
     <Row>
       {props.ids.map((id) => {
         if (id === props.skill) {
-          return (<Logo name={id} selected />)
+          return (<Logo name={id} updater={props.updater} selected />)
         }
-        return (<Logo name={id} />)
+        return (<Logo name={id} updater={props.updater}/>)
       })}
     </Row>
   )
 }
 
-function Logo(props: { name: string, selected?: boolean}) {
+function Logo(props: { name: string, updater: Function, selected?: boolean}) {
   const nameToImage = new Map([
     ["aws", aws_logo],
     ["autodesk-inventor", autodesk_inventor_logo],
@@ -59,6 +59,15 @@ function Logo(props: { name: string, selected?: boolean}) {
     <Card 
       style={{ width: '150px', maxWidth: "30vw" }}
       className={(props.selected) ? "highlight-skill" : ""}
+      role="button"
+      onClick={(e) => {
+        if (props.updater !== undefined) { 
+          console.log("Attempting update")
+          props.updater(name) 
+        } else {
+          console.log("Updater is undefined")
+        }
+      }}
     >
       <Card.Img
         variant="top"
