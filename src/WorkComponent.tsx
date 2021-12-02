@@ -75,8 +75,8 @@ export const data : WorkItemData[] = [
     title: "Amazon Robotics",
     subtitle: "Westboro, MA (Remote)",
     company_img: ar,
-    desc: "I designed and implemented a robotic schedule visualization proof-of-concept" +
-    "to help hasten debugging efforts for high-severity issues, involving independently meeting" +
+    desc: "I designed and implemented a robotic schedule visualization proof-of-concept " +
+    "to help hasten debugging efforts for high-severity issues, involving independently meeting " +
     "across teams to create the best designs and follow best practices.",
     img_src: [ar_work_1, ar_work_2],
     img_alt: ["UI Design", "Data diagram"],
@@ -86,8 +86,8 @@ export const data : WorkItemData[] = [
     title: "The MITRE Corporation",
     subtitle: "Bedford, MA (Remote)",
     company_img: mitre,
-    desc: "I worked on the Software Factory infrastructure-as-a-service project," +
-    "utilizing Kubernetes, Ansible, and Helm to resolve issues with" +
+    desc: "I worked on the Software Factory infrastructure-as-a-service project, " +
+    "utilizing Kubernetes, Ansible, and Helm to resolve issues with " +
     "its single-sign-on system and other code quality and site reliability services.",
     img_src: [],
     img_alt: [],
