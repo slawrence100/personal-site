@@ -1,6 +1,7 @@
 import React from "react";
 
 // Bootstrap
+import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -11,9 +12,12 @@ import Image from 'react-bootstrap/Image';
 import ar from "./amazon-robotics.jpg";
 import ar_work_1 from "./ar-work-1.jpg";
 import ar_work_2 from "./ar-work-2.jpg";
-
 import mitre from "./mitre-logo.png";
+
+import resume_pdf from './Sydney_Lawrence_Resume_Dec_2021.pdf';
+
 import LogoList from "./Logo";
+
 
 export interface WorkItemData {
   title: string,
@@ -22,7 +26,8 @@ export interface WorkItemData {
   desc: string,
   img_src: string[],
   img_alt: string[],
-  skill_ids: string[]
+  skill_ids: string[],
+  include_resume: boolean
 }
 
 function range(len: number) : number[] {
@@ -30,7 +35,7 @@ function range(len: number) : number[] {
 } 
 
 export function WorkItem(skill: string, item: WorkItemData, skillUpdater: Function) {
-  const {title, subtitle, company_img, desc, img_src, img_alt, skill_ids} = item;
+  const {title, subtitle, company_img, desc, img_src, img_alt, skill_ids, include_resume} = item;
   return (
     <>
       <Row>
@@ -46,6 +51,11 @@ export function WorkItem(skill: string, item: WorkItemData, skillUpdater: Functi
         <Col>
           <div>
             <p>{desc}</p>
+            {include_resume && (<>
+              <Button variant="outline-primary" href={resume_pdf} target="_blank" rel="noreferrer noopener">View my Resumè for more details</Button>
+              <br />
+              <br />
+            </>)}
           </div>
           {img_src.length !== 0 && (<div>
             <h5>Featured Images</h5>
@@ -80,7 +90,8 @@ export const data : WorkItemData[] = [
     "across teams to create the best designs and follow best practices.",
     img_src: [ar_work_1, ar_work_2],
     img_alt: ["UI Design", "Data diagram"],
-    skill_ids: ["aws", "react", "python", "git", "typescript"]
+    skill_ids: ["aws", "react", "python", "git", "typescript"],
+    include_resume: true
   },
   {
     title: "The MITRE Corporation",
@@ -91,7 +102,8 @@ export const data : WorkItemData[] = [
     "its single-sign-on system and other code quality and site reliability services.",
     img_src: [],
     img_alt: [],
-    skill_ids: ["ansible", "kubernetes", "git"]
+    skill_ids: ["ansible", "kubernetes", "git"],
+    include_resume: true
   }
 ]
 export default function WorkComponent(props: any) {

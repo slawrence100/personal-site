@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import { Scrollspy } from "@makotot/ghostui";
 
 // Bootstrap components
+import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -15,6 +16,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import "./App.css";
 import work_photo from './work-photo-small.jpg'
+import resume_pdf from './Sydney_Lawrence_Resume_Dec_2021.pdf';
 import WorkComponent from "./WorkComponent";
 import ProjectsComponent from "./ProjectsComponent";
 import ContactComponent from "./ContactComponent";
@@ -124,6 +126,8 @@ export default function App() {
                       My career goals are to constantly learn and apply new technological knowledge to create impact
                       on the world around me.
                     </p>
+                    <Button variant="primary" href={resume_pdf} target="_blank" rel="noreferrer noopener">View my Resumè</Button>
+                    <br />
                     <br />
                     <Form>
                       <h4>Searching for a skill? </h4>

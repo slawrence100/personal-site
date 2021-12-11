@@ -2,6 +2,7 @@ import React from "react";
 
 import LogoList from './Logo';
 // Bootstrap
+import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -16,6 +17,8 @@ import minibot from "./minibot.png";
 import minibot_project_1 from "./minibot-project-1.png";
 import minibot_project_2 from "./minibot-project-2.png";
 import minibot_project_3 from "./minibot-project-3.jpg";
+
+import resume_pdf from './Sydney_Lawrence_Resume_Dec_2021.pdf';
 
 import "./App.css";
 
@@ -39,6 +42,9 @@ export default function ProjectsComponent(props : any) {
               The final project for CS 3758 involved implementing a path planning algorithm for a simluated
               Roomba-like robot with two other students to visit as many waypoints as possible in a time limit.
             </p>
+            <Button variant="outline-primary" href={resume_pdf} target="_blank" rel="noreferrer noopener">View my Resumè for more details</Button>
+            <br />
+            <br />
           </div>
           <div>
             <h5>Skills Used</h5>
@@ -91,6 +97,9 @@ export default function ProjectsComponent(props : any) {
               redesigning the computer vision system,and writing an enhanced message protocol on the robot's
               onboard embedded system to facilitate simulation efforts.
             </p>
+            <Button variant="outline-primary" href={resume_pdf} target="_blank" rel="noreferrer noopener">View my Resumè for more details</Button>
+            <br />
+            <br />
           </div>
           <div>
             <h5>Featured Images</h5>
